@@ -22,15 +22,17 @@ echo "[Update the package]"
 sudo apt update
 
 echo "[Installing ROS and ROS Packages]"
-sudo apt install -y ros-foxy-desktop 
+sudo apt install -y ros-galactic-desktop
 
 # need for check
 sudo apt install python3-rosdep
+if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+    echo "[rosdep init and python-rosinstall]"
+    sudo rosdep init
+    rosdep update
+fi
 
-echo "[rosdep init and python-rosinstall]"
-sudo rosdep init
-rosdep update
-echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+echo "source /opt/ros/galactic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 sudo apt install -y python3-pip
@@ -48,7 +50,7 @@ echo "[Install workspace]"
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 cd ..
-rosdep install -i --from-path src --rosdistro foxy -y
+rosdep install -i --from-path src --rosdistro galactic -y
 colcon build
 
 . install/local_setup.bash
