@@ -26,7 +26,7 @@ sudo apt install -y ros-galactic-desktop
 
 # need for check
 sudo apt install python3-rosdep
-if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+if [ -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
     sudo rm /etc/ros/rosdep/sources.list.d/20-default.list 
 fi
 
@@ -55,6 +55,7 @@ cd ..
 rosdep install -i --from-path src --rosdistro galactic -y
 colcon build
 
+echo "[Update .bashrc]"
 . install/local_setup.bash
 echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 source ~/.bashrc
