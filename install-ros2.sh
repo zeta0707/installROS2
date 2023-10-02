@@ -27,10 +27,12 @@ sudo apt install -y ros-galactic-desktop
 # need for check
 sudo apt install python3-rosdep
 if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
-    echo "[rosdep init and python-rosinstall]"
-    sudo rosdep init
-    rosdep update
+    sudo rm /etc/ros/rosdep/sources.list.d/20-default.list 
 fi
+
+echo "[rosdep init and python-rosinstall]"
+sudo rosdep init
+rosdep update
 
 echo "source /opt/ros/galactic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
