@@ -1,20 +1,17 @@
-# Install ROS2 Foxy on Jeetson Nano
+# Install ROS2 jazzy on Ubuntu
 
 ## Tested Environment
-* Jetson Nano 2GB
-* Image: Ubuntu 20.04   
-https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
+* PC 
+* Image: Ubuntu 24.04 
 
 ## Usage
 
 (1) Download & Install
 
 ```
-$ git clone https://github.com/zeta0707/installROS2
+$ git clone -b jazzy https://github.com/zeta0707/installROS2
 $ cd installROS2
-$ chmod +x install-ros2.sh
-
-$ sh install-ros2.sh
+$ ./install-ros2.sh
 ```
 
 (2) Demo with talker/listener
@@ -42,5 +39,5 @@ $ ros2 run turtlesim turtle_teleop_key
 ## Reference
 ---
 
-[1] https://github.com/kimsooyoung/installROS2.git
+[1] https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
 
