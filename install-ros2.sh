@@ -28,6 +28,7 @@ sudo apt update
 
 echo "[Installing ROS and ROS Packages]"
 sudo apt install ros-jazzy-desktop
+sudo apt install ros-jazzy-rmw-cyclonedds-cpp
 
 sudo apt install python3-rosdep
 if [ -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
